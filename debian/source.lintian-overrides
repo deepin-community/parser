@@ -1,0 +1,4 @@
+# There is no gpg signature (and most likely newer be)
+parser: debian-watch-may-check-gpg-signature
+# the entire rfc is not included, only the code points
+parser: license-problem-non-free-RFC

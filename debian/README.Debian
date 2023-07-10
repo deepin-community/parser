@@ -1,0 +1,29 @@
+Parser 3 for Debian
+===================
+
+parser3 binary will check for configuration settings in the default
+system-wide auto.p file (/etc/parser3/auto.p), if neither option -c or
+environment variable CGI_PARSER_CONFIG is specified.
+
+Then, if the default auto.p is not readable, Parser will search for
+configuration file in the directory with CGI-script itself.
+
+
+Quick'n'dirty setup for Apache 2
+---------------------------------
+
+* Install either parser3-cgi or libapache2-mod-parser3 packages.
+
+* Copy /usr/share/doc/parser3-common/examples/apache.conf to
+  /etc/apache2/conf.d/parser
+
+* Enable module mod_actions:
+
+    a2enmod actions
+
+* Declare Parser as .html files handler (i.e. in .htaccess file):
+
+	AddHandler parser3-handler html
+
+You can test installation with
+/usr/share/doc/parser3-common/examples/*.html files.

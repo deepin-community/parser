@@ -1,0 +1,14 @@
+Misc hints for Debian source package.
+
+UTF-ize operators.txt:
+iconv -f cp1251 -t utf8 ../operators.txt > operators.ru.txt
+
+index*.html files are examples from:
+http://www.parser.ru/off-line/download/utils/parser3test_russian.zip
+http://www.parser.ru/off-line/download/utils/parser3test_english.zip
+
+UTF-ize them:
+iconv -f cp1251 -t uft8 _test.html |sed 's/$//' > index.en.html
+
+This package uses quilt for its patch management, see
+/usr/share/doc/quilt/README.source if you are unfamiliar with it.
