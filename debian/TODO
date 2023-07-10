@@ -1,0 +1,7 @@
+System-wide configuration:
+? alike php: /etc/parser3/<SAPI>/auto.p
+? common for all SAPI
+? howto handle system-wide auto.p with suexec (can't SetEnv)
+
+Misc:
+? build safe-mode cgi/cli binary

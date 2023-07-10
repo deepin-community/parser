@@ -1,0 +1,52 @@
+.\" -*- nroff -*-
+.TH PARSER 1 "Scripting Language"
+.SH NAME
+parser3 \- Command Line and CGI interface for Parser 3 Language.
+.SH SYNOPSIS
+.B parser3
+.RI
+[\fB\-h\fP]
+[\fB\-c\fP \fIconffile\fP]
+\fIfile\fR
+.br
+.SH DESCRIPTION
+Parse and execute \fIfile\fR in Parser 3 language.
+
+Parser checks for configuration settings in the \fIauto.p\fR file beside
+of the binary (in the directory with CGI-script itself) and then in the default
+system-wide \fIauto.p\fR file, if neither option \-c or environment variable
+CGI_PARSER_CONFIG is specified.
+
+Parser makes records about errors to error log file parser3.log, which
+is implicitly located in the same directory where parser3 CGI script
+is.  If Parser is not allowed to write to that file, errors are
+reported to standard error stream.
+.SH OPTIONS
+A summary of options is included below.
+.TP
+.B \-h
+Display usage information.
+.TP
+.B \fB\-c\fR \fIconffile\fR
+Use this \fIconffile\fR (/path/to/auto.p).
+.SH ENVIRONMENT VARIABLES
+Parser3 checks environment variable CGI_PARSER_CONFIG if option \-c is
+not specified.
+
+If you would rather change implicit location of parser3.log, you can
+explicitly specify it via stderr redirection or environment variable
+CGI_PARSER_LOG.
+.SH FILES
+.TP
+.B /etc/parser3/auto.p
+default
+\fBparser3\fP
+configuration file
+.SH SEE ALSO
+For more complete description of Parser3, look here:
+http://www.parser.ru/en/
+.SH AUTHOR
+parser3 was written by Alexandr Petrosian <paf@design.ru>.
+.PP
+This manual page was written by Sergey B Kirpichev <skirpichev@gmail.com>,
+for the Debian project (but may be used by others).

@@ -1,5 +1,372 @@
-template-repository (1.0-1) unstable; urgency=medium
+parser (3.4.6-3) unstable; urgency=medium
 
-  * Initial release
+  * QA upload.
+  * Orphan the package. (See #986413)
+  * debian/control: Bump Standards-Version to 4.6.0.
+  * debian/control: Update Vcs-* fields accordingly.
+  * debian/control: Update version requirement to fix lintian error
+    not-binnmuable-any-depends-all.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Boyuan Yang <byang@debian.org>  Sun, 14 Nov 2021 15:06:00 -0500
+
+parser (3.4.6-2) unstable; urgency=medium
+
+  * Bump up Standards-Version (to 4.5.1)
+  * Apply multiarch hinter suggestion
+  * Drop libmariadb.so-related change in auto.p (parser-mysql now
+    depends on compatibility libs)
+  * Apply suggestions for 103_auto_p.patch (to be removed in the next
+    release).  Thanks to Konstantin Morshnev.
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Mon, 25 Jan 2021 13:43:30 +0300
+
+parser (3.4.6-1) unstable; urgency=medium
+
+  * New upstream version 3.4.6
+  * Refresh patches
+  * Drop wrong lintian override
+  * Fix spare-manual-page (lintian)
+  * Architecture any -> all for -common and -dev
+  * Fix package-uses-deprecated-debhelper-compat-version (lintian)
+  * Rename debian/TODO.Debian
+  * Use secure URL's
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Fri, 22 Jan 2021 12:05:07 +0300
+
+parser (3.4.5-9) unstable; urgency=medium
+
+  * Revert $mail:receive (no users)
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Thu, 22 Oct 2020 14:02:15 +0300
+
+parser (3.4.5-8) unstable; urgency=medium
+
+  * Apply Multiarch hinter suggestions
+  * Drop 109_gmime-2.6.patch
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Tue, 28 Apr 2020 09:58:29 +0300
+
+parser (3.4.5-7) unstable; urgency=medium
+
+  * Patch 112_gmime_3.0.patch to build with libgmime-3.0
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Tue, 25 Feb 2020 13:57:13 +0300
+
+parser (3.4.5-6) unstable; urgency=medium
+
+  * Fix FTBFS with libxml2 2.9.10 (Closes: #949423)
+  * Bump up Standards-Version (to 4.5.0)
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Fri, 24 Jan 2020 23:43:35 +0300
+
+parser (3.4.5-5) unstable; urgency=medium
+
+  * Enable $mail:receive
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Tue, 03 Dec 2019 10:27:20 +0300
+
+parser (3.4.5-4) unstable; urgency=medium
+
+  * Override license-problem-non-free-RFC (the entire
+    rfc is not included, only the code points)
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Fri, 01 Jun 2018 14:34:04 +0300
+
+parser (3.4.5-3) unstable; urgency=medium
+
+  * Update Vcs-* fields for salsa.
+  * Bump up Standards-Version (to 4.1.4)
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Fri, 01 Jun 2018 11:34:53 +0300
+
+parser (3.4.5-2) unstable; urgency=medium
+
+  * Bump up Standards-Version (to 4.0.0)
+  * Fix lintian dep5-copyright-license-name-not-unique
+  * Override lintian error apache2-module-depends-on-real-apache2-package
+  * Enable hardening flags
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Mon, 10 Jul 2017 11:54:47 +0300
+
+parser (3.4.5-1) unstable; urgency=medium
+
+  * Imported Upstream version 3.4.5
+  * Refresh patches
+  * Catch spelling errors (from lintian)
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Tue, 09 May 2017 01:32:58 +0300
+
+parser (3.4.4-1) unstable; urgency=medium
+
+  * Fix URL in debian/watch
+  * Imported Upstream version 3.4.4
+  * Drop patches from upstream
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Fri, 29 Apr 2016 16:30:41 +0300
+
+parser (3.4.3-7) unstable; urgency=medium
+
+  * Backport upstream fixes
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Tue, 23 Jun 2015 18:10:14 +0300
+
+parser (3.4.3-6) unstable; urgency=medium
+
+  * Fix FTBFS on g++-4.9.2's stdlib implementation (Closes: #785511)
+  * libxml now C++ lib, exclude extern C
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Mon, 08 Jun 2015 22:58:17 +0300
+
+parser (3.4.3-5) unstable; urgency=medium
+
+  * Bump up Standards-Version (to 3.9.6)
+  * Override debian-watch-may-check-gpg-signature lintian warning
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Mon, 27 Oct 2014 15:18:52 +0300
+
+parser (3.4.3-4) unstable; urgency=medium
+
+  * Fix FTBFS: string3.h:51: undefined reference
+    to `_pcre_default_tables' (Closes: #755346)
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Sat, 30 Aug 2014 13:37:57 +0400
+
+parser (3.4.3-3) unstable; urgency=low
+
+  * Use dh-autoreconf instead of autotools-dev to also fix FTBFS on
+    ppc64el by getting new libtool macros (still updates
+    config.{sub,guess}).  Closes: #744646, thanks to Logan Rosen.
+  * Set "Section: httpd" for libapache2-mod-parser3
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Mon, 19 May 2014 13:39:10 +0400
+
+parser (3.4.3-2) unstable; urgency=low
+
+  * Fix lintian error: vcs-field-not-canonical
+  * Drop 108_libxml2_new_buffer_fix.patch
+  * Bump up Standards-Version (to 3.9.5)
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Wed, 08 Jan 2014 12:52:22 +0400
+
+parser (3.4.3-1) unstable; urgency=low
+
+  * Fix mod_parser3.so path
+  * Reformat maintainer scripts
+  * Don't restart apache2 if it's configuration is broken (LP: #1160836)
+  * Imported Upstream version 3.4.3 (Closes: #692628 and LP: #1184257)
+  * Refresh patches, drop patch 117 (applied by upstream)
+  * Correct lib/json copyright info
+  * Update copyright dates
+  * Fix spelling (patch 109)
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Tue, 05 Nov 2013 22:00:46 +0400
+
+parser (3.4.2-7) unstable; urgency=low
+
+  * Repackage from experimental to sid (Closes: #709470)
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Sun, 16 Jun 2013 15:26:02 +0400
+
+parser (3.4.2-6) experimental; urgency=low
+
+  * Refresh patches
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Wed, 29 May 2013 19:40:22 +0400
+
+parser (3.4.2-5) unstable; urgency=low
+
+  * LIBXML2_NEW_BUFFER API changes in patch 108 (from Ubuntu) to fix
+    FTBFS with newer libxml2
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Fri, 22 Feb 2013 19:49:43 +0400
+
+parser (3.4.2-4) unstable; urgency=low
+
+  * Removed duplicate field copyright (fix lintian)
+  * Drop DMUA, fix lintian warning
+  * Bump up Standards-Version (to 3.9.4)
+  * Use autotools-dev helpers to update config.guess/config.sub (fix
+    lintian warning: outdated-autotools-helper-file)
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Thu, 27 Dec 2012 18:59:50 +0400
+
+parser (3.4.2-3) unstable; urgency=low
+
+  * Remove duplicated Copyright fields from debian/copyright (fix lintian W)
+  * Document non-free license for json (see #692628)
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Tue, 11 Dec 2012 18:02:03 +0400
+
+parser (3.4.2-2) unstable; urgency=low
+
+  * Add -D_LARGEFILE64_SOURCE to fix FTBS of apache2 module for i386
+  * Drop quilt deps
+  * Add versioned deps on g++
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Thu, 28 Jun 2012 15:49:47 +0400
+
+parser (3.4.2-1) unstable; urgency=low
+
+  * Imported Upstream version 3.4.2
+  * Adopt changes by Konstantin Morshnev for 3.4.2
+  * Change Build-Depends:
+    - add g++, libltdl-dev
+    - drop automake1.9, apache2-threaded-dev
+  * Fix auto.p.dist installation
+  * Fix mod_parser3.so path
+  * Drop unused override's
+  * Drop --disable-version-update option
+  * Update debian/operators.ru.txt
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Thu, 28 Jun 2012 13:34:19 +0400
+
+parser (3.4.1-7) unstable; urgency=low
+
+  * Added patch 115 to call pa_setup_module_cells() while real request
+    handling.
+  * Fix syntax error for debian/copyright
+  * Fix FTBFS: multiarch path for xml lib (Closes: #672054)
+  * Refresh 199_reconfigure.patch
+  * Change dh compat to 9, enable hardening support
+  * Drop custom CFLAGS, LDFLAGS in debian/rules
+  * Add -fPIC to CFLAGS/CXXFLAGS
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Fri, 01 Jun 2012 15:58:59 +0400
+
+parser (3.4.1-6) experimental; urgency=low
+
+  * Added patch 115 to call pa_setup_module_cells() while real request
+    handling.
+  * Fix FTBFS: multiarch path for xml lib (Closes: #672054)
+  * Fix build errors for apache 2.4
+  * Drop workaround for #666875
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Mon, 14 May 2012 17:39:07 +0400
+
+parser (3.4.1-5) experimental; urgency=low
+
+  * Update Build-Depends and Depends for Apache 2.4
+  * Switch to dh_apache2 (Closes: #666798)
+  * Override dh_fixperms for #666875
+  * Fix syntax error for debian/copyright
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Sat, 07 Apr 2012 19:04:15 +0400
+
+parser (3.4.1-4) unstable; urgency=low
+
+  * Reformat debian/copyright according to accepted DEP5 spec
+  * Bump up Standards-Version to 3.9.3 (no changes)
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Mon, 05 Mar 2012 15:29:17 +0400
+
+parser (3.4.1-3) unstable; urgency=low
+
+  * Added dependence on apache2.2-common for libapache2-mod-parser3 (fix
+    puiparts installation error)
+  * Fixed desc for libapache2-mod-parser3
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Sat, 26 Nov 2011 20:45:02 +0400
+
+parser (3.4.1-2) unstable; urgency=low
+
+  * Remove /etc/patser3/apache2/auto.p from CGI SAPI package (Closes:
+    #649870)
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Thu, 24 Nov 2011 23:56:32 +0400
+
+parser (3.4.1-1) unstable; urgency=low
+
+  * Create default constructor for VVoid to make compiler happy (with -
+    fpermissive).  Closes: #625021.
+  * Bump up Standards-Version to 3.9.2.
+  * Added (tmp) override for embedded-library ltdl
+  * Removed obsoleted overrides cannot-check-whether-usr-share-doc-
+    symlink-points-to-foreign-package
+  * Imported Upstream version 3.4.1
+  * Refresh patches for 3.4.1 version
+  * Update debian/operators.ru.txt
+  * Build with Apache2 shared module
+  * Cleanup debian/rules
+  * Patch to build both CGI & Apache2 SAPI for --with-apache
+  * Install auto.p in /etc/parser3/apache2/ for Apache2 SAPI
+  * Install parser3.load for apache2 module
+  * Fix apache.conf for apache2 module
+  * Clarify installation procedure for different SAPI
+  * Added postinst/prerm scripts for libapache2-mod-parser3 package
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Sun, 20 Nov 2011 20:42:41 +0400
+
+parser (3.4.0-4) unstable; urgency=low
+
+  * Refresh patches with --no-index --no-timestamps -pab --diffstat
+  * Update ltconfig & ltmain.sh to make lintian happy
+  * Use tiny debian/rules, bump up debhelper compat level
+  * Create links for docs (to parser3-common)
+  * Add lintian overrides for cannot-check-whether-usr-share-doc-
+    symlink-points-to-foreign-package (/usr/share/doc/<package> ->
+    parser3-common)
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Sat, 19 Mar 2011 01:10:14 +0300
+
+parser (3.4.0-3) unstable; urgency=low
+
+  * Bump up Standards-Version
+  * Add hints to enable mod_actions in doc
+  * Use versioned LGPL license file in debian/copyright
+  * Added "DM-Upload-Allowed: yes" control field
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Fri, 04 Mar 2011 14:40:59 +0300
+
+parser (3.4.0-2) unstable; urgency=low
+
+  * Add ${misc:Depends} for parser3.
+  * Use "3.0 (quilt)" package format.
+  * Update format of debian/copyright, copyright years.
+  * Bump Standards-Version to 3.8.4.
+  * Patch embedded copy ltdl.c from upstream branch-1-5 (CVE-2009-3736).
+    Closes: #559837.
+  * Use automake-1.9 for 199 patch (Closes: #560608).
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Wed, 19 May 2010 21:20:06 +0400
+
+parser (3.4.0-1) unstable; urgency=low
+
+  * New Upstream Version.
+  * Update patchset for 3.4.0.
+  * Drop patches: 106,108,109.
+  * Cleanup obsolete notes in README.Debian.
+  * Add notes for quilt in debian/README.source.
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Thu, 19 Nov 2009 01:42:28 +0300
+
+parser (3.3.0-9) unstable; urgency=low
+
+  * Bump up Standards-Version (3.8.3)
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Tue, 01 Sep 2009 18:07:26 +0400
+
+parser (3.3.0-8) unstable; urgency=low
+
+  * Fix trim for utf8 strings.
+  * Include all ^trim tests (works in utf8 now).
+  * Fix desc for 109 patch.
+  * Update config.{sub,guess} files (Closes: #535725).
+  * Standards-Version -> 3.8.2
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Sun, 23 Aug 2009 12:08:23 +0400
+
+parser (3.3.0-7) unstable; urgency=low
+
+  * Use symlink for doc/ in parser3 metapackage.
+  * Cleanup pcre defines (only really required internal stuff).
+  * Fix desc for patch 107.
+  * Merge amd64 fixes from release_3_3_0 branch.
+  * Fix comment for patch 107.
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Sat, 06 Jun 2009 13:23:28 +0400
+
+parser (3.3.0-6) unstable; urgency=low
+
+  * Initial release (Closes: #519574).
+
+ -- Sergey B Kirpichev <skirpichev@gmail.com>  Fri, 13 Mar 2009 19:30:45 +0300

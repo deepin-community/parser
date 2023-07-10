@@ -1,0 +1,2 @@
+etc/parser3/apache2/*
+usr/lib/parser3/mod_parser3.so /usr/lib/apache2/modules/

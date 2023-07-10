@@ -1,0 +1,1 @@
+LoadModule parser3_module /usr/lib/apache2/modules/mod_parser3.so

@@ -1,0 +1,21 @@
+Description: Set Debian-specific defaults for system-wide parser3 config.
+Author: Sergey B Kirpichev <skirpichev@gmail.com>
+Forwarded: not-needed
+
+---
+ etc/auto.p.in |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+--- a/etc/auto.p.in
++++ b/etc/auto.p.in
+@@ -18,8 +18,8 @@ $response:content-type[
+ 
+ @conf[filespec]
+ $confdir[^file:dirname[$filespec]]
+-$charsetsdir[$confdir/charsets]
+-$sqldriversdir[$confdir/lib]
++$charsetsdir[@datarootdir@/charsets]
++$sqldriversdir[@libdir@]
+ 
+ $CHARSETS[
+ #	$.cp866[$charsetsdir/cp866.cfg]
